@@ -75,6 +75,9 @@ function TitanPanelJunkButton_OnLoad(self)
 	self:RegisterEvent("PLAYER_ENTERING_WORLD");
 	self:RegisterEvent("BAG_UPDATE");
 	self:RegisterEvent("ITEM_LOCK_CHANGED");
+	
+	-- Register with Titan Panel
+	TitanPanelButton_OnLoad(self);
 end
 
 -- OnEvent handler
