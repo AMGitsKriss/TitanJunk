@@ -1,0 +1,9 @@
+## Interface: 20504
+## Title: Titan Panel [|cffeda55fJunk|r]
+## Notes: Adds a junk item value display to Titan Panel
+## Author: AMGitsKriss
+## Version: 1.0.0
+## RequiredDeps: Titan
+## X-Child-Of: Titan
+
+TitanJunk.xml
