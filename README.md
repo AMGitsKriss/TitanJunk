@@ -35,6 +35,23 @@ A World of Warcraft Classic: The Burning Crusade addon that integrates with Tita
 
 The addon scans all your bag slots (bags 0-4) for items with "Poor" quality (grey items) and calculates their total vendor sell price. The value is displayed on the Titan Panel bar in the familiar gold, silver, and copper format.
 
+## Troubleshooting
+
+### Plugin Not Showing in Titan Panel Menu
+
+If the addon is enabled but you can't find it in the Titan Panel menu:
+
+1. Make sure Titan Panel is installed and enabled
+2. Try reloading your UI with `/reload`
+3. Check that both TitanJunk and Titan Panel are enabled in the AddOns list at character selection
+4. Look for "Junk" under: Right-click Titan Panel → Plugins → Information → Junk
+
+### Common Issues
+
+- **Addon shows as "Dependency Missing"**: Titan Panel must be installed first
+- **Values not updating**: The addon updates when you loot items or when bags change. Try moving an item to trigger an update.
+- **No grey items showing**: You need to have grey/junk quality items in your bags (0-4) for a value to display
+
 ## Version
 
 Current Version: 1.0.0
