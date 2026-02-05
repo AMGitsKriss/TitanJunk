@@ -11,8 +11,10 @@ A World of Warcraft Classic: The Burning Crusade addon that integrates with Tita
 
 ## Requirements
 
-- World of Warcraft Classic: The Burning Crusade (TBC Classic)
+- World of Warcraft Classic: The Burning Crusade (TBC Classic) - Patch 2.5.4 or later
 - [Titan Panel](https://www.curseforge.com/wow/addons/titan-panel-classic) addon
+
+**Note**: This addon uses the `C_Container` API introduced in TBC Classic 2.5.4 (Interface 20504). If you're using an earlier version of TBC Classic, the addon will not work.
 
 ## Installation
 
@@ -35,6 +37,8 @@ A World of Warcraft Classic: The Burning Crusade addon that integrates with Tita
 
 The addon scans all your bag slots (bags 0-4) for items with "Poor" quality (grey items) and calculates their total vendor sell price. The value is displayed on the Titan Panel bar in the familiar gold, silver, and copper format.
 
+The addon uses the modern `C_Container` API introduced in TBC Classic 2.5.4 for bag/container operations.
+
 ## Troubleshooting
 
 ### Plugin Not Showing in Titan Panel Menu
@@ -49,6 +53,7 @@ If the addon is enabled but you can't find it in the Titan Panel menu:
 ### Common Issues
 
 - **Addon shows as "Dependency Missing"**: Titan Panel must be installed first
+- **Error about GetContainerNumSlots**: Make sure you're running TBC Classic 2.5.4 or later. Earlier versions don't have the `C_Container` API.
 - **Values not updating**: The addon updates when you loot items or when bags change. Try moving an item to trigger an update.
 - **No grey items showing**: You need to have grey/junk quality items in your bags (0-4) for a value to display
 
