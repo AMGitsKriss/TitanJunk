@@ -40,9 +40,9 @@ end
 function TitanPanelJunkButton_GetButtonText(id)
 	local junkValue = TitanPanelJunkButton_GetJunkValue();
 	local buttonText = TitanUtils_GetColoredText(L["TITAN_JUNK_BUTTON_LABEL"], TitanPanelGetVar(id, "ShowLabelText"));
-	local valueText = TitanUtils_GetColoredText(GetCoinTextureString(junkValue), TitanPanelGetVar(id, "ShowColoredText"));
+	local valueText = GetCoinTextureString(junkValue);
 	
-	return L["TITAN_JUNK_BUTTON_LABEL"], valueText;
+	return buttonText, valueText;
 end
 
 -- Show tooltip
