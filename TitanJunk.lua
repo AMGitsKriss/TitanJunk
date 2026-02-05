@@ -17,16 +17,23 @@ function TitanPanelJunkButton_GetJunkValue()
 	
 	-- Iterate through all bags (0-4 for main bags)
 	for bag = 0, 4 do
-		local numSlots = GetContainerNumSlots(bag);
+		local numSlots = C_Container.GetContainerNumSlots(bag);
 		if numSlots then
 			for slot = 1, numSlots do
-				local _, itemCount, _, quality, _, _, itemLink = GetContainerItemInfo(bag, slot);
+				local containerInfo = C_Container.GetContainerItemInfo(bag, slot);
 				
-				-- Quality 0 = Poor (grey/junk)
-				if itemLink and quality == 0 then
-					local _, _, _, _, _, _, _, _, _, _, vendorPrice = GetItemInfo(itemLink);
-					if vendorPrice and vendorPrice > 0 then
-						totalValue = totalValue + (vendorPrice * (itemCount or 1));
+				-- Check if slot has an item
+				if containerInfo then
+					local itemLink = containerInfo.hyperlink;
+					local quality = containerInfo.quality;
+					local itemCount = containerInfo.stackCount;
+					
+					-- Quality 0 = Poor (grey/junk)
+					if itemLink and quality == 0 then
+						local _, _, _, _, _, _, _, _, _, _, vendorPrice = GetItemInfo(itemLink);
+						if vendorPrice and vendorPrice > 0 then
+							totalValue = totalValue + (vendorPrice * (itemCount or 1));
+						end
 					end
 				end
 			end
